@@ -33,11 +33,13 @@ class _LandingState extends State<Landing> {
               child: Column(
                 children: [
                   CarouselSlider.builder(
+                    
                     itemCount: imagesList.length,
                     options: CarouselOptions(
                       enableInfiniteScroll: false,
                       height: 390,
                       reverse: true,
+                      viewportFraction: .7,
                       enlargeCenterPage: true,
                       enlargeStrategy: CenterPageEnlargeStrategy.height,
                       onPageChanged: (index, reasom) =>
@@ -48,7 +50,7 @@ class _LandingState extends State<Landing> {
                       return Container(
                         margin: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
+                          borderRadius: BorderRadius.circular(12),
                           image: DecorationImage(
                             image: AssetImage(centerImage),
                             fit: BoxFit.fill,
@@ -66,7 +68,7 @@ class _LandingState extends State<Landing> {
                     activeIndex: scrollIndex,
                     count: imagesList.length,
                     effect: const ExpandingDotsEffect(
-                      dotColor: Colors.pink,
+                      dotColor: ColorConstants.WINE,
                       activeDotColor: Colors.white,
                       dotHeight: 10,
                     ),

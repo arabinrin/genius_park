@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:genius_park/screens/Podcast.dart';
+import 'package:genius_park/screens/affirmation_page.dart';
+import 'package:genius_park/screens/qoute_page.dart';
+import 'package:genius_park/screens/resources.dart';
+import 'package:genius_park/screens/spot_on.dart';
 import 'package:genius_park/utils/navigatoin.dart';
 import 'package:genius_park/widgets/bottom_nav.dart';
 import 'package:genius_park/widgets/categories.dart';
 import 'package:genius_park/widgets/group_button.dart';
+import 'package:genius_park/widgets/listile.dart';
 import 'package:genius_park/widgets/nav_bar.dart';
 import 'package:genius_park/widgets/podcast.dart';
 import 'package:genius_park/widgets/qoute.dart';
@@ -21,37 +26,56 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       drawer: Drawer(
         child: ListView(
-          children: const <Widget>[
-            UserAccountsDrawerHeader(
-                decoration: BoxDecoration(color: Colors.white),
-                accountName: Text(
-                  'Kazeem Ibrahim',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18),
-                ),
-                accountEmail: Text(
-                  'kazeem@gmail.com',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.normal,
-                      fontSize: 16),
-                )),
-            ListTile(
-              leading: Icon(Icons.home),
-              title: Text('Home'),
-            ),
-            ListTile(
-              leading: Icon(Icons.person),
-              title: Text('Account'),
-            ),
-            ListTile(
-              leading: Icon(Icons.shopping_cart),
-              title: Text('Cart'),
-            ),
+          children: <Widget>[
+            // UserAccountsDrawerHeader(
+            //     decoration: BoxDecoration(color: Colors.white),
+            //     accountName: Text(
+            //       'Kazeem Ibrahim',
+            //       style: TextStyle(
+            //           color: Colors.black,
+            //           fontWeight: FontWeight.bold,
+            //           fontSize: 18),
+            //     ),
+            //     accountEmail: Text(
+            //       'kazeem@gmail.com',
+            //       style: TextStyle(
+            //           color: Colors.black,
+            //           fontWeight: FontWeight.normal,
+            //           fontSize: 16),
+            //     )),
+            ListTiling('images/homeicon.png', 'Home'),
+            ListTiling('images/discoveryicon.png', 'Discovery Daily'),
+
+            ListTiling('images/podcasticon.png', 'Podcast'),
+
+            GestureDetector(
+                onTap: () {
+                  changeScreen(context, SpotMePage());
+                },
+                child: ListTiling('images/qouteicon.png', 'Qoutes')),
+
+            ListTiling('images/sporton.png', 'SPOT-On'),
+
+            GestureDetector(
+                onTap: () {
+                  changeScreen(context, AffirmPage());
+                },
+                child: ListTiling('images/affirmIcon.png', 'Affirmation')),
+
+            ListTiling('images/foldericon.png', 'Personal Folder'),
+
+            GestureDetector(
+                onTap: () {
+                  changeScreen(context, Resources());
+                },
+                child: ListTiling('images/resourcesicon.png', 'Resources')),
+
+            ListTiling('images/abouticon.png', 'About'),
+            ListTiling('images/seticon.png', 'Setting'),
+            ListTiling('images/homeicon.png', 'LOGOUT'),
           ],
         ),
       ),
@@ -200,4 +224,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-

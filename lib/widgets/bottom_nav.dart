@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:genius_park/screens/Podcast.dart';
 import 'package:genius_park/screens/home_page.dart';
+import 'package:genius_park/screens/qoute_page.dart';
 import 'package:genius_park/screens/spot_me.dart';
+import 'package:genius_park/screens/spot_on.dart';
 import 'package:genius_park/utils/navigatoin.dart';
 import 'nav_bar.dart';
 
@@ -39,16 +41,21 @@ class BottomNavBar extends StatelessWidget {
           ),
           GestureDetector(
             onTap: () {
-              changeScreen(context,const SpotMePage());
+              changeScreen(context, SpotME());
             },
-            child:const NAvBar(
+            child: const NAvBar(
               image: 'images/spotme.png',
               name: 'SPOT-Me',
             ),
           ),
-          NAvBar(
-            image: 'images/sporton.png',
-            name: 'SPOT-On',
+          GestureDetector(
+            onTap: () {
+              changeScreen(context, const SpotOnPage());
+            },
+            child: const NAvBar(
+              image: 'images/sporton.png',
+              name: 'SPOT-On',
+            ),
           ),
           NAvBar(
             image: 'images/settings.png',

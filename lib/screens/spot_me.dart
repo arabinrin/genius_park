@@ -1,167 +1,183 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:genius_park/screens/Podcast.dart';
-import 'package:genius_park/utils/navigatoin.dart';
-import 'package:genius_park/widgets/bottom_nav.dart';
-import 'package:genius_park/widgets/categories.dart';
-import 'package:genius_park/widgets/daily_qoute.dart';
-import 'package:genius_park/widgets/group_button.dart';
-import 'package:genius_park/widgets/nav_bar.dart';
-import 'package:genius_park/widgets/podcast.dart';
-import 'package:genius_park/widgets/qoute.dart';
+import 'package:genius_park/screens/sign_in.dart';
+import 'package:genius_park/utils/colors.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import '';
-
-class SpotMePage extends StatefulWidget {
-  const SpotMePage({Key? key}) : super(key: key);
-
+class SpotME extends StatefulWidget {
   @override
-  _SpotMePageState createState() => _SpotMePageState();
+  State<SpotME> createState() => _SpotMEState();
 }
 
-class _SpotMePageState extends State<SpotMePage> {
+class _SpotMEState extends State<SpotME> {
+  final List<String> imagesList = [
+    'images/spot1.png',
+    'images/slider2.png',
+    'images/slider3.png',
+  ];
+
+  int scrollIndex = 0;
+
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
     return Scaffold(
-      drawer: Drawer(
-        child: ListView(
-          children: const <Widget>[
-            UserAccountsDrawerHeader(
-                decoration: BoxDecoration(color: Colors.white),
-                accountName: Text(
-                  'Kazeem Ibrahim',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18),
-                ),
-                accountEmail: Text(
-                  'kazeem@gmail.com',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.normal,
-                      fontSize: 16),
-                )),
-            ListTile(
-              leading: Icon(Icons.home),
-              title: Text('Home'),
+      backgroundColor: Colors.red,
+      body: Stack(
+        children: <Widget>[
+          Positioned(
+            top: 40,
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              height: 50,
+              width: width,
+              child: Row(
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: const ImageIcon(
+                      AssetImage('images/arrowback.png'),
+                      size: 60,
+                      color: Colors.white,
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 100,
+                  ),
+                  const Text(
+                    'SPOT-ME',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 25,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
             ),
-            ListTile(
-              leading: Icon(Icons.person),
-              title: Text('Account'),
-            ),
-            ListTile(
-              leading: Icon(Icons.shopping_cart),
-              title: Text('Cart'),
-            ),
-          ],
-        ),
-      ),
-      appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.black),
-        backgroundColor: Colors.white,
-        elevation: 0.0,
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.search),
           ),
+          Positioned(
+            top: 100,
+            child: Container(
+              height: 580,
+              width: width,
+              child: Column(
+                children: [
+                  CarouselSlider.builder(
+                    itemCount: imagesList.length,
+                    options: CarouselOptions(
+                      enableInfiniteScroll: false,
+                      height: 390,
+                      reverse: true,
+                      viewportFraction: .7,
+                      enlargeCenterPage: true,
+                      enlargeStrategy: CenterPageEnlargeStrategy.height,
+                      onPageChanged: (index, reasom) =>
+                          setState(() => scrollIndex = index),
+                    ),
+                    itemBuilder: (_, i, o) {
+                      final centerImage = imagesList[i];
+                      return Container(
+                        margin: const EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          image: DecorationImage(
+                            image: AssetImage(centerImage),
+                            fit: BoxFit.fill,
+                          ),
+                          color: Colors.red,
+                        ),
+                        // child: Image.asset(
+                        //   centerImage,
+                        //   fit: BoxFit.cover,
+                        // ),
+                      );
+                    },
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  AnimatedSmoothIndicator(
+                    activeIndex: scrollIndex,
+                    count: imagesList.length,
+                    effect: const ExpandingDotsEffect(
+                      dotColor: ColorConstants.WINE,
+                      activeDotColor: Colors.white,
+                      dotHeight: 10,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: const <Widget>[
+                          Text(
+                            'SPOT-ME',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 25,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 50),
+                        child: Text(
+                          'SPOT Me is an approach to training the mind, similar to the way that fitness is an approach to training the body. ',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            wordSpacing: 2,
+                            letterSpacing: 1.5,
+                          ),
+                          textAlign: TextAlign.center,
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 5,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Positioned(
+              bottom: 60,
+              child: Container(
+                alignment: Alignment.center,
+                height: 70,
+                width: width,
+                child: GestureDetector(
+                  onTap: () {},
+                  child: Container(
+                    height: 50,
+                    width: width * .75,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50),
+                      color: Colors.black,
+                    ),
+                    child: const Center(
+                        child: Text(
+                      'Get Started',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.white,
+                      ),
+                    )),
+                  ),
+                ),
+              ))
         ],
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          padding: EdgeInsets.all(20),
-          child: Column(children: <Widget>[
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const <Widget>[
-                    Text(
-                      'Hi, Olamide',
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.black54,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                    Text(
-                      'Good Morning',
-                      style: TextStyle(
-                        fontSize: 25,
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        letterSpacing: 1.2,
-                      ),
-                    ),
-                  ],
-                ),
-                Stack(
-                  children: [
-                    Container(
-                      height: 50,
-                      width: 50,
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.black),
-                        shape: BoxShape.circle,
-                        image: const DecorationImage(
-                          image: AssetImage(
-                            'images/slider2.png',
-                          ),
-                          fit: BoxFit.cover,
-                        ),
-                        color: Colors.red,
-                      ),
-                    ),
-                    Positioned(
-                      top: 2,
-                      left: 2,
-                      child: Container(
-                        height: 10,
-                        width: 10,
-                        decoration: BoxDecoration(
-                            color: Colors.red,
-                            borderRadius: BorderRadius.circular(20)),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 5,
-            ),
-            Categories(),
-            const SizedBox(
-              height: 15,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const <Widget>[
-                Text(
-                  'Daily Qoutes',
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Text(
-                  'See all',
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.black54,
-                  ),
-                )
-              ],
-            ),
-            DailyQoutes(),
-          ]),
-        ),
-      ),
-      bottomNavigationBar: BottomNavBar(),
     );
   }
 }

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:genius_park/screens/affirmation_page.dart';
+import 'package:genius_park/screens/Podcast.dart';
 import 'package:genius_park/screens/qoute_page.dart';
 import 'package:genius_park/screens/resources.dart';
 import 'package:genius_park/utils/navigatoin.dart';
+import 'package:genius_park/widgets/affirmation.dart';
 import 'package:genius_park/widgets/bottom_nav.dart';
 import 'package:genius_park/widgets/categories.dart';
 import 'package:genius_park/widgets/group_button.dart';
@@ -10,20 +11,20 @@ import 'package:genius_park/widgets/listile.dart';
 import 'package:genius_park/widgets/nav_bar.dart';
 import 'package:genius_park/widgets/podcast.dart';
 import 'package:genius_park/widgets/qoute.dart';
-import 'package:genius_park/widgets/top_podcast.dart';
 
-class PodcastPage extends StatefulWidget {
+class AffirmPage extends StatefulWidget {
+  const AffirmPage({Key? key}) : super(key: key);
+
   @override
-  _PodcastPageState createState() => _PodcastPageState();
+  _AffirmPageState createState() => _AffirmPageState();
 }
 
-class _PodcastPageState extends State<PodcastPage> {
+class _AffirmPageState extends State<AffirmPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-            backgroundColor: Colors.white,
-
-      drawer: Drawer(
+      backgroundColor: Colors.white,
+      drawer:  Drawer(
         child: ListView(
           children: <Widget>[
             // UserAccountsDrawerHeader(
@@ -63,11 +64,12 @@ class _PodcastPageState extends State<PodcastPage> {
 
             ListTiling('images/foldericon.png', 'Personal Folder'),
 
- GestureDetector(
+             GestureDetector(
                 onTap: () {
                   changeScreen(context, Resources());
                 },
                 child: ListTiling('images/resourcesicon.png', 'Resources')),
+
 
             ListTiling('images/abouticon.png', 'About'),
             ListTiling('images/seticon.png', 'Setting'),
@@ -160,7 +162,7 @@ class _PodcastPageState extends State<PodcastPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const <Widget>[
                   Text(
-                    'Featured Podcasts',
+                    'Featured Affirmations',
                     style: TextStyle(
                       fontSize: 20,
                       color: Colors.black,
@@ -177,12 +179,13 @@ class _PodcastPageState extends State<PodcastPage> {
                   )
                 ],
               ),
-              Podcast(),
+              Affirm(),
+             
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const <Widget>[
                   Text(
-                    'Top Podcasts',
+                    'Top Affirmations',
                     style: TextStyle(
                       fontSize: 20,
                       color: Colors.black,
@@ -199,15 +202,11 @@ class _PodcastPageState extends State<PodcastPage> {
                   )
                 ],
               ),
-              const SizedBox(
-                height: 10,
-              ),
-              TopPodcast(),
             ],
           ),
         ),
       ),
-      bottomNavigationBar: const BottomNavBar(),
+      bottomNavigationBar: BottomNavBar(),
     );
   }
 }

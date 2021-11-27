@@ -7,7 +7,7 @@ class ColorConstants {
   static const BACKGROUND = Color(0xFF1E1F28);
   static const PRIMARY = Color(0xFFEF3651);
   static const WHITE = Color(0XFFF6F6F6);
-  static const GRAY = Color(0XFFABB4BD);
+  static const WINE = Color(0XFFAD0407);
 }
 
 class BigText extends StatelessWidget {

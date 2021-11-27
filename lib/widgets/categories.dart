@@ -1,12 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:genius_park/models/category_model.dart';
+import 'package:genius_park/screens/affirmation_page.dart';
+import 'package:genius_park/screens/qoute_page.dart';
+import 'package:genius_park/screens/spot_on.dart';
+import 'package:genius_park/utils/navigatoin.dart';
+import 'package:genius_park/widgets/group_button.dart';
+import 'package:genius_park/widgets/podcast.dart';
 
 List<CategoryModel> categoriesList = [
-  CategoryModel(image: 'images/podcast1.png', name: 'Podcast'),
-  CategoryModel(image: 'images/quotation1.png', name: 'Qoutes'),
-  CategoryModel(image: 'images/spotlights1.png', name: 'SPOT-Me'),
-  CategoryModel(image: 'images/speaker1.png', name: 'Affirmation'),
-  CategoryModel(image: 'images/machine-learning1.png', name: 'SPOT-On'),
+  CategoryModel(
+    image: 'images/podcast1.png',
+    name: 'Podcast',
+    widget: Home(),
+  ),
+  CategoryModel(
+    image: 'images/quotation1.png',
+    name: 'Qoutes',
+    widget: SpotMePage(),
+  ),
+  CategoryModel(
+    image: 'images/spotlights1.png',
+    name: 'SPOT-Me',
+    widget: SpotOnPage(),
+  ),
+  CategoryModel(
+      image: 'images/speaker1.png', name: 'Affirmation', widget: AffirmPage()),
+  CategoryModel(
+    image: 'images/machine-learning1.png',
+    name: 'SPOT-On',
+    widget: SpotOnPage(),
+  ),
 ];
 
 class Categories extends StatefulWidget {
@@ -28,38 +51,42 @@ class _CategoriesState extends State<Categories> {
             itemCount: categoriesList.length,
             itemBuilder: (_, i) {
               return GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  changeScreen(_, Podcast());
+                },
                 child: Padding(
                   padding: EdgeInsets.all(8),
                   child: Column(children: <Widget>[
-                    Container(
-                      decoration: BoxDecoration(
+                    GestureDetector(
+                      onTap: () {},
+                      child: Container(
+                        decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           color: Colors.white,
-                         
-                          ),
-                      child: Padding(
-                          padding: EdgeInsets.all(4),
+                        ),
+                        child: Padding(
+                            padding: EdgeInsets.all(4),
 
-                          // Positioned.fill(
-                          //   child: Align(
-                          //     alignment: Alignment.center,
-                          //     child: Loading(),
-                          //   ),
-                          // ),
-                          child: Container(
-                            height: 50,
-                            width: 50,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              image: DecorationImage(
-                                image: AssetImage(
-                                  categoriesList[i].image,
+                            // Positioned.fill(
+                            //   child: Align(
+                            //     alignment: Alignment.center,
+                            //     child: Loading(),
+                            //   ),
+                            // ),
+                            child: Container(
+                              height: 50,
+                              width: 50,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                    categoriesList[i].image,
+                                  ),
+                                  fit: BoxFit.cover,
                                 ),
-                                fit: BoxFit.cover,
                               ),
-                            ),
-                          )),
+                            )),
+                      ),
                     ),
                     const SizedBox(height: 5),
                     Text(
