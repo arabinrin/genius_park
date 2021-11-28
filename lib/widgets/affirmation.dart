@@ -60,59 +60,62 @@ class _AffirmState extends State<Affirm> {
                 Center(
                   child: Text(
                     affirm[i].qoute,
-                    style: GoogleFonts.nunito(textStyle: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w700,
-                    ),),
+                    style: GoogleFonts.nunito(
+                      textStyle: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
                     textAlign: TextAlign.left,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 2,
                   ),
                 ),
-                Positioned(
-                    bottom: 0,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            IconButton(
-                              onPressed: () {},
-                              icon: const ImageIcon(
-                                AssetImage('images/play.png'),
-                                color: Colors.white,
-                                size: 60,
-                              ),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          IconButton(
+                            onPressed: () {},
+                            icon: const ImageIcon(
+                              AssetImage('images/play.png'),
+                              color: Colors.white,
+                              size: 60,
                             ),
-                            Text(
-                              affirm[i].title,
-                              style:GoogleFonts.merriweather(textStyle: const TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.normal,
-                                fontSize: 12,
-                              ),)
-                            ),
-                          ],
-                        ),
-                        Row(
-                          children: [
-                            Image.asset(
-                              'images/time - icon.png',
-                              width: 12,
-                              height: 12,
-                            ),
-                            Text(
-                              ' ${affirm[i].time} min',
-                              style: GoogleFonts.merriweather(textStyle: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 10,
-                              ),)
-                            ),
-                          ],
-                        )
-                      ],
-                    ))
+                          ),
+                          Text(affirm[i].title,
+                              style: GoogleFonts.merriweather(
+                                textStyle: const TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 12,
+                                ),
+                              )),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Image.asset(
+                            'images/time - icon.png',
+                            width: 12,
+                            height: 12,
+                          ),
+                          Text(' ${affirm[i].time} min',
+                              style: GoogleFonts.merriweather(
+                                textStyle: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 10,
+                                ),
+                              )),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
             // child: Image.asset(

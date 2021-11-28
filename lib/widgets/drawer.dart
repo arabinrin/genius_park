@@ -29,10 +29,10 @@ class DrawerWidget extends StatelessWidget {
               },
               child: ListTiling('images/qouteicon.png', 'Qoutes')),
           GestureDetector(
-             onTap: () {
+              onTap: () {
                 changeScreen(context, SpotME());
               },
-            child: ListTiling('images/sporton.png', 'SPOT-On')),
+              child: ListTiling('images/sporton.png', 'SPOT-On')),
           GestureDetector(
               onTap: () {
                 changeScreen(context, AffirmPage());
@@ -44,12 +44,7 @@ class DrawerWidget extends StatelessWidget {
                 changeScreen(context, Resources());
               },
               child: ListTiling('images/resourcesicon.png', 'Resources')),
-          GestureDetector(
-            onTap: () {
-              changeScreen(context, Complex());
-            },
-            child: ListTiling('images/abouticon.png', 'About'),
-          ),
+          ListTiling('images/abouticon.png', 'About'),
           ListTiling('images/seticon.png', 'Setting'),
           ListTiling('images/homeicon.png', 'LOGOUT'),
         ],

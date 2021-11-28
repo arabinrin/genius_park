@@ -71,6 +71,7 @@ class _LandingState extends State<Landing> {
                       dotColor: ColorConstants.WINE,
                       activeDotColor: Colors.white,
                       dotHeight: 10,
+                      
                     ),
                   ),
                   const SizedBox(

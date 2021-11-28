@@ -24,7 +24,7 @@ class _AffirmPageState extends State<AffirmPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      drawer:  Drawer(
+      drawer: Drawer(
         child: ListView(
           children: <Widget>[
             // UserAccountsDrawerHeader(
@@ -64,12 +64,11 @@ class _AffirmPageState extends State<AffirmPage> {
 
             ListTiling('images/foldericon.png', 'Personal Folder'),
 
-             GestureDetector(
+            GestureDetector(
                 onTap: () {
                   changeScreen(context, Resources());
                 },
                 child: ListTiling('images/resourcesicon.png', 'Resources')),
-
 
             ListTiling('images/abouticon.png', 'About'),
             ListTiling('images/seticon.png', 'Setting'),
@@ -180,7 +179,6 @@ class _AffirmPageState extends State<AffirmPage> {
                 ],
               ),
               Affirm(),
-             
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const <Widget>[
