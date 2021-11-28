@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:genius_park/models/top_podcast.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class TopPodcast extends StatelessWidget {
   List<TopPodcastModel> topPodcast = [
@@ -105,10 +106,12 @@ class TopPodcast extends StatelessWidget {
                         children: [
                           Text(
                             topPodcast[index].title,
-                            style: const TextStyle(
-                                fontSize: 14,
-                                color: Colors.white,
-                                fontWeight: FontWeight.normal),
+                            style: GoogleFonts.poppins(
+                              textStyle: const TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500),
+                            ),
                             textAlign: TextAlign.left,
                             overflow: TextOverflow.ellipsis,
                             maxLines: 3,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:genius_park/models/qoutes.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Qoutes extends StatefulWidget {
   @override
@@ -82,10 +83,10 @@ class _QoutesState extends State<Qoutes> {
                           width: 180,
                           child: Text(
                             qoutes[i].title,
-                            style: const TextStyle(
+                            style: GoogleFonts.nunito(textStyle: const TextStyle(
                                 fontSize: 16,
                                 color: Colors.white,
-                                fontWeight: FontWeight.normal),
+                                fontWeight: FontWeight.w600),),
                             textAlign: TextAlign.left,
                             overflow: TextOverflow.ellipsis,
                             maxLines: 3,

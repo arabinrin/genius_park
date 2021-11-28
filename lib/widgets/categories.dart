@@ -6,6 +6,7 @@ import 'package:genius_park/screens/spot_on.dart';
 import 'package:genius_park/utils/navigatoin.dart';
 import 'package:genius_park/widgets/group_button.dart';
 import 'package:genius_park/widgets/podcast.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 List<CategoryModel> categoriesList = [
   CategoryModel(
@@ -91,11 +92,11 @@ class _CategoriesState extends State<Categories> {
                     const SizedBox(height: 5),
                     Text(
                       categoriesList[i].name,
-                      style: TextStyle(
+                      style: GoogleFonts.nunito(textStyle: const TextStyle(
                         color: Colors.black87,
                         fontWeight: FontWeight.normal,
                         fontSize: 14,
-                      ),
+                      ),)
                     )
                   ]),
                 ),

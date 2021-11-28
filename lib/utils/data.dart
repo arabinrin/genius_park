@@ -1,13 +1,13 @@
 List<String> images = [
-  "assets/images/1.png",
-  "assets/images/2.png",
-  "assets/images/3.png",
-  "assets/images/4.png",
+  "images/qoute2.png",
+  "images/qoute3.png",
+  "images/qoute2.png",
+  "images/qoute4.png",
 ];
 
 List<String> title = [
-  "Hounted Ground",
-  "Fallen In Love",
-  "The Dreaming Moon",
-  "Jack the Persian and the Black Castel",
+  "LIFE IS UNPREDICTABLE, YET YOU CAN MAKE IT WHAT YOU WANT",
+  "LIFE IS UNPREDICTABLE, YET YOU CAN MAKE IT WHAT YOU WANT",
+  "LIFE IS UNPREDICTABLE, YET YOU CAN MAKE IT WHAT YOU WANTn",
+  "LIFE IS UNPREDICTABLE, YET YOU CAN MAKE IT WHAT YOU WANT",
 ];

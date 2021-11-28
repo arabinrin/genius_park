@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:genius_park/screens/landing.dart';
 import 'package:genius_park/utils/navigatoin.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Splash extends StatelessWidget {
   const Splash({Key? key}) : super(key: key);
@@ -39,12 +40,12 @@ class Splash extends StatelessWidget {
                     TextSpan(text: "Genius"),
                     TextSpan(
                       text: "PARK",
-                      style: TextStyle(
+                      style:GoogleFonts.merriweather(textStyle: const TextStyle(
                         fontWeight: FontWeight.w700,
-                        fontSize: 25.0.r,
+                        fontSize: 25,
                         height: 32 / 24.0,
                         color: Colors.white,
-                      ),
+                      ),)
                     ),
                   ])),
             ),

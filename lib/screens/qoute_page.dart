@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:genius_park/screens/Podcast.dart';
 import 'package:genius_park/screens/affirmation_page.dart';
+import 'package:genius_park/utils/complex.dart';
 import 'package:genius_park/utils/navigatoin.dart';
 import 'package:genius_park/widgets/bottom_nav.dart';
 import 'package:genius_park/widgets/categories.dart';
 import 'package:genius_park/widgets/daily_qoute.dart';
+import 'package:genius_park/widgets/drawer.dart';
 import 'package:genius_park/widgets/group_button.dart';
 import 'package:genius_park/widgets/listile.dart';
 import 'package:genius_park/widgets/nav_bar.dart';
 import 'package:genius_park/widgets/podcast.dart';
 import 'package:genius_park/widgets/qoute.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '';
 
@@ -24,56 +27,8 @@ class _SpotMePageState extends State<SpotMePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-            backgroundColor: Colors.white,
-
-      drawer: Drawer(
-        child: ListView(
-          children: <Widget>[
-            // UserAccountsDrawerHeader(
-            //     decoration: BoxDecoration(color: Colors.white),
-            //     accountName: Text(
-            //       'Kazeem Ibrahim',
-            //       style: TextStyle(
-            //           color: Colors.black,
-            //           fontWeight: FontWeight.bold,
-            //           fontSize: 18),
-            //     ),
-            //     accountEmail: Text(
-            //       'kazeem@gmail.com',
-            //       style: TextStyle(
-            //           color: Colors.black,
-            //           fontWeight: FontWeight.normal,
-            //           fontSize: 16),
-            //     )),
-            ListTiling('images/homeicon.png', 'Home'),
-            ListTiling('images/discoveryicon.png', 'Discovery Daily'),
-
-            ListTiling('images/podcasticon.png', 'Podcast'),
-
-            GestureDetector(
-                onTap: () {
-                  changeScreen(context, SpotMePage());
-                },
-                child: ListTiling('images/qouteicon.png', 'Qoutes')),
-
-            ListTiling('images/sporton.png', 'SPOT-On'),
-
-            GestureDetector(
-                onTap: () {
-                  changeScreen(context, AffirmPage());
-                },
-                child: ListTiling('images/affirmIcon.png', 'Affirmation')),
-
-            ListTiling('images/foldericon.png', 'Personal Folder'),
-
-            ListTiling('images/resourcesicon.png', 'Resources'),
-
-            ListTiling('images/abouticon.png', 'About'),
-            ListTiling('images/seticon.png', 'Setting'),
-            ListTiling('images/homeicon.png', 'LOGOUT'),
-          ],
-        ),
-      ),
+      backgroundColor: Colors.white,
+      drawer: DrawerWidget(),
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.black),
         backgroundColor: Colors.white,
@@ -95,24 +50,24 @@ class _SpotMePageState extends State<SpotMePage> {
               children: <Widget>[
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const <Widget>[
-                    Text(
-                      'Hi, Olamide',
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.black54,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                    Text(
-                      'Good Morning',
-                      style: TextStyle(
-                        fontSize: 25,
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        letterSpacing: 1.2,
-                      ),
-                    ),
+                  children: <Widget>[
+                    Text('Hi, Olamide',
+                        style: GoogleFonts.merriweather(
+                          textStyle: const TextStyle(
+                            fontSize: 20,
+                            color: Colors.black54,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        )),
+                    Text('Good Morning',
+                        style: GoogleFonts.merriweather(
+                          textStyle: const TextStyle(
+                            fontSize: 25,
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            letterSpacing: 1.2,
+                          ),
+                        )),
                   ],
                 ),
                 Stack(
@@ -156,26 +111,78 @@ class _SpotMePageState extends State<SpotMePage> {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const <Widget>[
+              children: <Widget>[
                 Text(
                   'Daily Qoutes',
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
+                  style: GoogleFonts.merriweather(
+                    textStyle: const TextStyle(
+                      fontSize: 20,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
                 Text(
                   'See all',
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.black54,
+                  style: GoogleFonts.poppins(
+                    textStyle: const TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black54,
+                    ),
                   ),
                 )
               ],
             ),
-            DailyQoutes(),
+            Complex(),
+            Container(
+          height: 100,
+          width: 200,
+          alignment: Alignment.center,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                height: 50,
+                width: 50,
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(.2),
+                      offset: Offset(2, 2),
+                      blurRadius: 5,
+                    ),
+                  ],
+                  shape: BoxShape.circle,
+                  color: Colors.grey.withOpacity(.4),
+                ),
+                child: Icon(Icons.add),
+              ),
+              const SizedBox(
+                width: 40,
+              ),
+              Container(
+                height: 50,
+                width: 50,
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(.2),
+                      offset: Offset(2, 2),
+                      blurRadius: 5,
+                    ),
+                  ],
+                  shape: BoxShape.circle,
+                  color: Colors.red.withOpacity(.3),
+                ),
+                child: Icon(
+                  Icons.favorite,
+                  color: Colors.red,
+                ),
+              ),
+            ],
+          ),
+        ),
           ]),
         ),
       ),

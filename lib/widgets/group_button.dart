@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:group_button/group_button.dart';
 
 class Home extends StatefulWidget {
@@ -32,16 +33,16 @@ class _HomeState extends State<Home> {
         selectedButtons: [0, 1],
 
         /// [List<int>] after 2.2.1 version
-        selectedTextStyle: const TextStyle(
+        selectedTextStyle:GoogleFonts.nunito(textStyle: const TextStyle(
           fontWeight: FontWeight.w600,
           fontSize: 14,
           color: Colors.red,
-        ),
-        unselectedTextStyle: TextStyle(
+        ),),
+        unselectedTextStyle:GoogleFonts.nunito(textStyle:  TextStyle(
           fontWeight: FontWeight.normal,
           fontSize: 14,
           color: Colors.grey[600],
-        ),
+        ),),
         selectedColor: Colors.white,
         unselectedColor: Colors.white,
         selectedBorderColor: Colors.red,

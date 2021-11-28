@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:genius_park/screens/sign_in.dart';
 import 'package:genius_park/utils/colors.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class SpotME extends StatefulWidget {
@@ -46,13 +47,13 @@ class _SpotMEState extends State<SpotME> {
                   const SizedBox(
                     width: 100,
                   ),
-                  const Text(
+                   Text(
                     'SPOT-ME',
-                    style: TextStyle(
+                    style: GoogleFonts.merriweather( textStyle: const TextStyle(
                       fontWeight: FontWeight.w600,
                       fontSize: 25,
                       color: Colors.white,
-                    ),
+                    ),)
                   ),
                 ],
               ),
@@ -116,28 +117,28 @@ class _SpotMEState extends State<SpotME> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
-                        children: const <Widget>[
+                        children:  <Widget>[
                           Text(
                             'SPOT-ME',
-                            style: TextStyle(
+                            style:GoogleFonts.merriweather(textStyle: const TextStyle(
                               fontWeight: FontWeight.w600,
                               fontSize: 25,
                               color: Colors.white,
-                            ),
+                            ),)
                           ),
                         ],
                       ),
                       const SizedBox(height: 10),
-                      const Padding(
+                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 50),
                         child: Text(
                           'SPOT Me is an approach to training the mind, similar to the way that fitness is an approach to training the body. ',
-                          style: TextStyle(
+                          style:GoogleFonts.merriweather(textStyle:const TextStyle(
                             color: Colors.white,
                             fontSize: 18,
                             wordSpacing: 2,
                             letterSpacing: 1.5,
-                          ),
+                          ),),
                           textAlign: TextAlign.center,
                           overflow: TextOverflow.ellipsis,
                           maxLines: 5,
@@ -164,14 +165,14 @@ class _SpotMEState extends State<SpotME> {
                       borderRadius: BorderRadius.circular(50),
                       color: Colors.black,
                     ),
-                    child: const Center(
+                    child:  Center(
                         child: Text(
                       'Get Started',
-                      style: TextStyle(
+                      style: GoogleFonts.merriweather(textStyle: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w700,
                         color: Colors.white,
-                      ),
+                      ),)
                     )),
                   ),
                 ),

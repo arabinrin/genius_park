@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:genius_park/models/affirmation.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Affirm extends StatefulWidget {
   @override
@@ -59,11 +60,11 @@ class _AffirmState extends State<Affirm> {
                 Center(
                   child: Text(
                     affirm[i].qoute,
-                    style: const TextStyle(
+                    style: GoogleFonts.nunito(textStyle: const TextStyle(
                       color: Colors.white,
                       fontSize: 18,
                       fontWeight: FontWeight.w700,
-                    ),
+                    ),),
                     textAlign: TextAlign.left,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 2,
@@ -86,11 +87,11 @@ class _AffirmState extends State<Affirm> {
                             ),
                             Text(
                               affirm[i].title,
-                              style: const TextStyle(
+                              style:GoogleFonts.merriweather(textStyle: const TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.normal,
                                 fontSize: 12,
-                              ),
+                              ),)
                             ),
                           ],
                         ),
@@ -103,10 +104,10 @@ class _AffirmState extends State<Affirm> {
                             ),
                             Text(
                               ' ${affirm[i].time} min',
-                              style: const TextStyle(
+                              style: GoogleFonts.merriweather(textStyle: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 10,
-                              ),
+                              ),)
                             ),
                           ],
                         )

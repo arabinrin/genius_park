@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:genius_park/models/podcast_model.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Podcast extends StatelessWidget {
   List<PodcastModel> podcast = [
@@ -71,18 +72,20 @@ class Podcast extends StatelessWidget {
                       ),
                       Positioned(
                         left: 20,
-                        top: 40,
+                        top: 20,
                         child: Container(
                           width: 80,
                           child: Text(
                             podcast[i].title,
-                            style: const TextStyle(
-                                fontSize: 22,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w700),
+                            style: GoogleFonts.merriweather(
+                              textStyle: const TextStyle(
+                                  fontSize: 18,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w600),
+                            ),
                             textAlign: TextAlign.left,
                             overflow: TextOverflow.ellipsis,
-                            maxLines: 5,
+                            maxLines: 4,
                           ),
                         ),
                       ),
@@ -111,9 +114,11 @@ class Podcast extends StatelessWidget {
                             children: [
                               Text(
                                 podcast[i].author,
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 10,
+                                style: GoogleFonts.merriweather(
+                                  textStyle: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 10,
+                                  ),
                                 ),
                               ),
                               Row(
@@ -123,13 +128,13 @@ class Podcast extends StatelessWidget {
                                     width: 12,
                                     height: 12,
                                   ),
-                                  Text(
-                                    ' ${podcast[i].time} min',
-                                    style: const TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 10,
-                                    ),
-                                  ),
+                                  Text(' ${podcast[i].time} min',
+                                      style: GoogleFonts.merriweather(
+                                        textStyle: const TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 8,
+                                        ),
+                                      )),
                                 ],
                               )
                             ],

@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class DailyQoutes extends StatelessWidget {
   @override
@@ -25,13 +26,13 @@ class DailyQoutes extends StatelessWidget {
           ),
           child: Stack(
             children: <Widget>[
-              const Center(
+               Center(
                 child: Text(
                   'LIFE IS UNPREDICTABLE, YET YOU CAN MAKE IT WHAT YOU WANT',
-                  style: TextStyle(
+                  style: GoogleFonts.nunito(textStyle:const TextStyle(
                       fontSize: 22,
                       color: Colors.white,
-                      fontWeight: FontWeight.normal),
+                      fontWeight: FontWeight.normal),),
                   textAlign: TextAlign.center,
                   overflow: TextOverflow.ellipsis,
                   maxLines: 5,

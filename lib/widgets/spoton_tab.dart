@@ -2,6 +2,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:genius_park/models/spoken_word.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SpotTab extends StatefulWidget {
   @override
@@ -64,7 +65,8 @@ class _SpotTabState extends State<SpotTab> {
                         indicatorColor: Colors.red,
                         indicator:
                             CircleTabIndicator(color: Colors.red, radius: 3),
-                        labelColor: Colors.grey,
+                        labelColor: Colors.black54,
+                        labelStyle: GoogleFonts.nunito(),
                         tabs: const [
                           Tab(text: "Spoken words"),
                           Tab(text: "Motivation"),
@@ -152,11 +154,11 @@ class _SpotTabState extends State<SpotTab> {
                                               children: [
                                                 Text(
                                                   spokenWordList[i].name,
-                                                  style: const TextStyle(
+                                                  style: GoogleFonts.nunito(textStyle: const TextStyle(
                                                     color: Colors.white,
-                                                    fontWeight: FontWeight.w500,
+                                                    fontWeight: FontWeight.w600,
                                                     fontSize: 14,
-                                                  ),
+                                                  ),),
                                                   maxLines: 1,
                                                   textAlign: TextAlign.center,
                                                   overflow:
@@ -167,12 +169,12 @@ class _SpotTabState extends State<SpotTab> {
                                                 ),
                                                 Text(
                                                   spokenWordList[i].author,
-                                                  style: const TextStyle(
+                                                  style: GoogleFonts.nunito(textStyle: const TextStyle(
                                                     color: Colors.white,
                                                     fontWeight:
-                                                        FontWeight.normal,
+                                                        FontWeight.w600,
                                                     fontSize: 12,
-                                                  ),
+                                                  ),)
                                                 ),
                                               ],
                                             ),

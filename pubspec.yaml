@@ -45,6 +45,8 @@ dependencies:
   
   flutter_screenutil: ^5.0.1
   hex_color_me:
+  google_fonts:
+  form_field_validator:
   
   
 

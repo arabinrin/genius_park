@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 class ListTiling extends StatelessWidget {
   String image;
   String text;
@@ -12,7 +13,7 @@ class ListTiling extends StatelessWidget {
         size: 60,
         color: Colors.black,
       ),
-      title: Text(text),
+      title: Text(text,style: GoogleFonts.merriweather(),),
     );
   }
 }

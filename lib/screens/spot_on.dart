@@ -5,10 +5,12 @@ import 'package:genius_park/screens/resources.dart';
 import 'package:genius_park/utils/navigatoin.dart';
 import 'package:genius_park/widgets/bottom_nav.dart';
 import 'package:genius_park/widgets/categories.dart';
+import 'package:genius_park/widgets/drawer.dart';
 import 'package:genius_park/widgets/listile.dart';
 import 'package:genius_park/widgets/spoton_tab.dart';
 
 import 'package:genius_park/widgets/top_podcast.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '';
 
@@ -24,58 +26,7 @@ class _SpotOnPageState extends State<SpotOnPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      drawer: Drawer(
-        child: ListView(
-          children: <Widget>[
-            // UserAccountsDrawerHeader(
-            //     decoration: BoxDecoration(color: Colors.white),
-            //     accountName: Text(
-            //       'Kazeem Ibrahim',
-            //       style: TextStyle(
-            //           color: Colors.black,
-            //           fontWeight: FontWeight.bold,
-            //           fontSize: 18),
-            //     ),
-            //     accountEmail: Text(
-            //       'kazeem@gmail.com',
-            //       style: TextStyle(
-            //           color: Colors.black,
-            //           fontWeight: FontWeight.normal,
-            //           fontSize: 16),
-            //     )),
-            ListTiling('images/homeicon.png', 'Home'),
-            ListTiling('images/discoveryicon.png', 'Discovery Daily'),
-
-            ListTiling('images/podcasticon.png', 'Podcast'),
-
-            GestureDetector(
-                onTap: () {
-                  changeScreen(context, SpotMePage());
-                },
-                child: ListTiling('images/qouteicon.png', 'Qoutes')),
-
-            ListTiling('images/sporton.png', 'SPOT-On'),
-
-            GestureDetector(
-                onTap: () {
-                  changeScreen(context, AffirmPage());
-                },
-                child: ListTiling('images/affirmIcon.png', 'Affirmation')),
-
-            ListTiling('images/foldericon.png', 'Personal Folder'),
-
- GestureDetector(
-                onTap: () {
-                  changeScreen(context, Resources());
-                },
-                child: ListTiling('images/resourcesicon.png', 'Resources')),
-
-            ListTiling('images/abouticon.png', 'About'),
-            ListTiling('images/seticon.png', 'Setting'),
-            ListTiling('images/homeicon.png', 'LOGOUT'),
-          ],
-        ),
-      ),
+      drawer: DrawerWidget(),
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.black),
         backgroundColor: Colors.white,
@@ -97,22 +48,24 @@ class _SpotOnPageState extends State<SpotOnPage> {
               children: <Widget>[
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const <Widget>[
-                    Text(
-                      'Hi, Olamide',
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.black54,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
+                  children: <Widget>[
+                    Text('Hi, Olamide',
+                        style: GoogleFonts.merriweather(
+                          textStyle: const TextStyle(
+                            fontSize: 20,
+                            color: Colors.black54,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        )),
                     Text(
                       'Good Morning',
-                      style: TextStyle(
-                        fontSize: 25,
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        letterSpacing: 1.2,
+                      style: GoogleFonts.merriweather(
+                        textStyle: const TextStyle(
+                          fontSize: 25,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 1.2,
+                        ),
                       ),
                     ),
                   ],
@@ -159,26 +112,28 @@ class _SpotOnPageState extends State<SpotOnPage> {
             SpotTab(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const <Widget>[
-                Text(
-                  'Spot On',
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+              children: <Widget>[
+                Text('Spot On',
+                    style: GoogleFonts.merriweather(
+                      textStyle: const TextStyle(
+                        fontSize: 20,
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
                 Text(
                   'See all',
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.black54,
+                  style: GoogleFonts.poppins(
+                    textStyle: const TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black54,
+                    ),
                   ),
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             TopPodcast(),

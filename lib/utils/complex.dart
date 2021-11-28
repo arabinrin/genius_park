@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'data.dart';
 import 'dart:math';
@@ -24,41 +25,20 @@ class _ComplexState extends State<Complex> {
     });
 
     return Container(
-      decoration: BoxDecoration(
-          gradient: LinearGradient(
-              colors: [
-            Color(0xFF1b1e44),
-            Color(0xFF2d3447),
-          ],
-              begin: Alignment.bottomCenter,
-              end: Alignment.topCenter,
-              tileMode: TileMode.repeated)),
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        body: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              Stack(
-                children: <Widget>[
-                  CardScrollWidget(currentPage),
-                  Positioned.fill(
-                    child: PageView.builder(
-                      itemCount: images.length,
-                      controller: controller,
-                      reverse: false,
-                      itemBuilder: (context, index) {
-                        return Container();
-                      },
-                    ),
-                  )
-                ],
-              ),
-              SizedBox(
-                height: 20.0,
-              ),
-            ],
-          ),
-        ),
+      child: Stack(
+        children: <Widget>[
+          CardScrollWidget(currentPage),
+          Positioned.fill(
+            child: PageView.builder(
+              itemCount: images.length,
+              controller: controller,
+              reverse: false,
+              itemBuilder: (context, index) {
+                return Container();
+              },
+            ),
+          )
+        ],
       ),
     );
   }
@@ -121,7 +101,7 @@ class CardScrollWidget extends StatelessWidget {
                     children: <Widget>[
                       Image.asset(images[i], fit: BoxFit.cover),
                       Align(
-                        alignment: Alignment.bottomLeft,
+                        alignment: Alignment.center,
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -129,28 +109,40 @@ class CardScrollWidget extends StatelessWidget {
                             Padding(
                               padding: EdgeInsets.symmetric(
                                   horizontal: 16.0, vertical: 8.0),
-                              child: Text(title[i],
-                                  style: TextStyle(
+                              child: Text(
+                                title[i],
+                                style: GoogleFonts.nunito(
+                                  textStyle: const TextStyle(
+                                      fontSize: 22,
                                       color: Colors.white,
-                                      fontSize: 25.0,
-                                      fontFamily: "SF-Pro-Text-Regular")),
-                            ),
-                            SizedBox(
-                              height: 10.0,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                  left: 12.0, bottom: 12.0),
-                              child: Container(
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: 22.0, vertical: 6.0),
-                                decoration: BoxDecoration(
-                                    color: Colors.blueAccent,
-                                    borderRadius: BorderRadius.circular(20.0)),
-                                child: Text("Read Later",
-                                    style: TextStyle(color: Colors.white)),
+                                      fontWeight: FontWeight.normal),
+                                ),
+                                textAlign: TextAlign.center,
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 5,
                               ),
-                            )
+                            ),
+                            Align(
+                              alignment: Alignment.bottomCenter,
+                              child: Text(
+                                '- Anonymous',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 18),
+                              ),
+                            ),
+                            // Padding(
+                            //   padding: const EdgeInsets.only(
+                            //       left: 12.0, bottom: 12.0),
+                            //   child: Container(
+                            //     padding: EdgeInsets.symmetric(
+                            //         horizontal: 22.0, vertical: 6.0),
+                            //     decoration: BoxDecoration(
+                            //         color: Colors.blueAccent,
+                            //         borderRadius: BorderRadius.circular(20.0)),
+                            //     child: Text("Read Later",
+                            //         style: TextStyle(color: Colors.white)),
+                            //   ),
+                            // )
                           ],
                         ),
                       )

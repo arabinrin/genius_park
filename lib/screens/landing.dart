@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:genius_park/screens/sign_in.dart';
 import 'package:genius_park/utils/colors.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class Landing extends StatefulWidget {
@@ -33,7 +34,6 @@ class _LandingState extends State<Landing> {
               child: Column(
                 children: [
                   CarouselSlider.builder(
-                    
                     itemCount: imagesList.length,
                     options: CarouselOptions(
                       enableInfiniteScroll: false,
@@ -81,35 +81,36 @@ class _LandingState extends State<Landing> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
-                        children: const <Widget>[
-                          Text(
-                            'Genius',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 25,
-                              color: Colors.white,
-                            ),
-                          ),
-                          Text(
-                            'PARK',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 25,
-                              color: Colors.white,
-                            ),
-                          ),
+                        children: <Widget>[
+                          Text('Genius',
+                              style: GoogleFonts.merriweather(
+                                textStyle: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 25,
+                                  color: Colors.white,
+                                ),
+                              )),
+                          Text('PARK',
+                              style: GoogleFonts.merriweather(
+                                textStyle: const TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 25,
+                                  color: Colors.white,
+                                ),
+                              )),
                         ],
                       ),
                       const SizedBox(height: 10),
-                      const Padding(
+                      Padding(
                         padding: EdgeInsets.symmetric(horizontal: 50),
                         child: Text(
                           'Meditation is an approach to training the mind, similar to the way that fitness is an approach to training the body.',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            wordSpacing: 2,
-                            letterSpacing: 1.5,
+                          style: GoogleFonts.merriweather(
+                            textStyle: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              letterSpacing: 1.5,
+                            ),
                           ),
                           textAlign: TextAlign.center,
                           overflow: TextOverflow.ellipsis,
@@ -131,7 +132,7 @@ class _LandingState extends State<Landing> {
                 child: GestureDetector(
                   onTap: () {
                     Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) =>  SingIn()));
+                        MaterialPageRoute(builder: (context) => SingIn()));
                   },
                   child: Container(
                     height: 50,
@@ -140,14 +141,14 @@ class _LandingState extends State<Landing> {
                       borderRadius: BorderRadius.circular(50),
                       color: Colors.white,
                     ),
-                    child: const Center(
-                        child: Text(
-                      'Get Started',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    )),
+                    child: Center(
+                        child: Text('Get Started',
+                            style: GoogleFonts.merriweather(
+                              textStyle:const TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ))),
                   ),
                 ),
               ))
