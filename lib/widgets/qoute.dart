@@ -83,10 +83,12 @@ class _QoutesState extends State<Qoutes> {
                           width: 180,
                           child: Text(
                             qoutes[i].title,
-                            style: GoogleFonts.nunito(textStyle: const TextStyle(
-                                fontSize: 16,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w600),),
+                            style: GoogleFonts.nunito(
+                              textStyle: const TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w600),
+                            ),
                             textAlign: TextAlign.left,
                             overflow: TextOverflow.ellipsis,
                             maxLines: 3,

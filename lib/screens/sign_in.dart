@@ -1,8 +1,7 @@
 // @dart=2.9
 
 import 'package:flutter/material.dart';
-import 'package:genius_park/screens/home_page.dart';
-import 'package:genius_park/utils/colors.dart';
+import 'package:genius_park/screens/mainhome.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 
@@ -157,8 +156,10 @@ class SingIn extends StatelessWidget {
                     GestureDetector(
                       onTap: () {
                         if (formkey.currentState.validate()) {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (_) => HomePage()));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) => UserHomeScreen()));
                           print("Validated");
                         } else {
                           print("Not Validated");

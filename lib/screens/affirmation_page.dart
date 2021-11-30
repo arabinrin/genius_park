@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:genius_park/screens/Podcast.dart';
+
 import 'package:genius_park/screens/qoute_page.dart';
 import 'package:genius_park/screens/resources.dart';
 import 'package:genius_park/utils/navigatoin.dart';
 import 'package:genius_park/widgets/affirmation.dart';
-import 'package:genius_park/widgets/bottom_nav.dart';
 import 'package:genius_park/widgets/categories.dart';
-import 'package:genius_park/widgets/group_button.dart';
 import 'package:genius_park/widgets/listile.dart';
-import 'package:genius_park/widgets/nav_bar.dart';
-import 'package:genius_park/widgets/podcast.dart';
-import 'package:genius_park/widgets/qoute.dart';
 
 class AffirmPage extends StatefulWidget {
   const AffirmPage({Key? key}) : super(key: key);
@@ -105,6 +100,7 @@ class _AffirmPageState extends State<AffirmPage> {
                           fontSize: 20,
                           color: Colors.black54,
                           fontWeight: FontWeight.w700,
+                          letterSpacing: 0.3,
                         ),
                       ),
                       Text(
@@ -204,7 +200,6 @@ class _AffirmPageState extends State<AffirmPage> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavBar(),
     );
   }
 }

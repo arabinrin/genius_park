@@ -39,14 +39,15 @@ class Splash extends StatelessWidget {
                       children: [
                     TextSpan(text: "Genius"),
                     TextSpan(
-                      text: "PARK",
-                      style:GoogleFonts.merriweather(textStyle: const TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontSize: 25,
-                        height: 32 / 24.0,
-                        color: Colors.white,
-                      ),)
-                    ),
+                        text: "PARK",
+                        style: GoogleFonts.merriweather(
+                          textStyle: const TextStyle(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 25,
+                            height: 32 / 24.0,
+                            color: Colors.white,
+                          ),
+                        )),
                   ])),
             ),
             SizedBox(

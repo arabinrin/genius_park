@@ -1,22 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:genius_park/screens/Podcast.dart';
-import 'package:genius_park/screens/affirmation_page.dart';
-import 'package:genius_park/screens/qoute_page.dart';
-import 'package:genius_park/screens/resources.dart';
-import 'package:genius_park/screens/spot_on.dart';
-import 'package:genius_park/utils/navigatoin.dart';
-import 'package:genius_park/widgets/bottom_nav.dart';
 import 'package:genius_park/widgets/categories.dart';
 import 'package:genius_park/widgets/drawer.dart';
 import 'package:genius_park/widgets/group_button.dart';
-import 'package:genius_park/widgets/listile.dart';
-import 'package:genius_park/widgets/nav_bar.dart';
 import 'package:genius_park/widgets/podcast.dart';
 import 'package:genius_park/widgets/qoute.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -26,9 +15,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  
-  ScrollController _mycontroller1 = new ScrollController(); // make seperate controllers
-  ScrollController _mycontroller2 = new ScrollController(); // for each scrollables
+  ScrollController _mycontroller1 =
+      new ScrollController(); // make seperate controllers
+  ScrollController _mycontroller2 =
+      new ScrollController(); // for each scrollables
 
   @override
   Widget build(BuildContext context) {
@@ -52,6 +42,8 @@ class _HomePageState extends State<HomePage> {
           child: Container(
             padding: EdgeInsets.all(20),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -162,7 +154,7 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Text(
-                      'Qoutes',
+                      'Quotes',
                       style: GoogleFonts.merriweather(
                         textStyle: const TextStyle(
                           fontSize: 20,
@@ -173,7 +165,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Text(
                       'See all',
-                      style: GoogleFonts.poppins(
+                      style: GoogleFonts.merriweather(
                         textStyle: const TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w400,
@@ -189,7 +181,6 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavBar(),
     );
   }
 }

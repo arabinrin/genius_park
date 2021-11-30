@@ -154,11 +154,14 @@ class _SpotTabState extends State<SpotTab> {
                                               children: [
                                                 Text(
                                                   spokenWordList[i].name,
-                                                  style: GoogleFonts.nunito(textStyle: const TextStyle(
-                                                    color: Colors.white,
-                                                    fontWeight: FontWeight.w600,
-                                                    fontSize: 14,
-                                                  ),),
+                                                  style: GoogleFonts.nunito(
+                                                    textStyle: const TextStyle(
+                                                      color: Colors.white,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                      fontSize: 14,
+                                                    ),
+                                                  ),
                                                   maxLines: 1,
                                                   textAlign: TextAlign.center,
                                                   overflow:
@@ -167,15 +170,16 @@ class _SpotTabState extends State<SpotTab> {
                                                 const SizedBox(
                                                   height: 5,
                                                 ),
-                                                Text(
-                                                  spokenWordList[i].author,
-                                                  style: GoogleFonts.nunito(textStyle: const TextStyle(
-                                                    color: Colors.white,
-                                                    fontWeight:
-                                                        FontWeight.w600,
-                                                    fontSize: 12,
-                                                  ),)
-                                                ),
+                                                Text(spokenWordList[i].author,
+                                                    style: GoogleFonts.nunito(
+                                                      textStyle:
+                                                          const TextStyle(
+                                                        color: Colors.white,
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                        fontSize: 12,
+                                                      ),
+                                                    )),
                                               ],
                                             ),
                                           ),
@@ -216,7 +220,8 @@ class _SpotTabState extends State<SpotTab> {
                         ),
                       ),
                       Container(
-                        child: Center(child: Text("Motivatiion videos will be here")),
+                        child: Center(
+                            child: Text("Motivatiion videos will be here")),
                       ),
                       Center(
                         child: Container(

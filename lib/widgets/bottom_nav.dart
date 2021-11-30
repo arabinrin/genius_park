@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:genius_park/models/nav_model.dart';
 import 'package:genius_park/screens/Podcast.dart';
 import 'package:genius_park/screens/home_page.dart';
-import 'package:genius_park/screens/qoute_page.dart';
 import 'package:genius_park/screens/resources.dart';
-import 'package:genius_park/screens/spot_me.dart';
 import 'package:genius_park/screens/spot_on.dart';
 import 'package:genius_park/utils/navigatoin.dart';
 import 'nav_bar.dart';
@@ -69,7 +67,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             child: Container(
               width: MediaQuery.of(context).size.width / 6,
               decoration: BoxDecoration(
-              shape: BoxShape.circle,
+                shape: BoxShape.circle,
                 color: (_selectedIndexs == i)
                     ? Colors.red.withOpacity(.3)
                     : Colors.white,

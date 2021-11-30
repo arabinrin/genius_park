@@ -1,9 +1,11 @@
+// ignore: unused_import
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:genius_park/models/resources.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+// ignore: must_be_immutable
 class Resources extends StatelessWidget {
   List<REsourcesModel> resources = [
     REsourcesModel(
@@ -86,7 +88,6 @@ class Resources extends StatelessWidget {
       ),
       body: Padding(
         padding: EdgeInsets.only(left: 2.r, right: 2.r),
-        
         child: GridView.builder(
           padding: EdgeInsets.symmetric(horizontal: 4),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -126,11 +127,9 @@ class Resources extends StatelessWidget {
                         Text(
                           resources[index].name,
                           style: GoogleFonts.merriweather(
-                            textStyle: const TextStyle(
-                                fontSize: 12,
-                                color: Colors.black,
-                                fontWeight: FontWeight.w400),
-                          ),
+                              fontSize: 12,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w400),
                           textAlign: TextAlign.left,
                           overflow: TextOverflow.ellipsis,
                           maxLines: 3,

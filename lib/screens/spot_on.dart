@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:genius_park/screens/affirmation_page.dart';
-import 'package:genius_park/screens/qoute_page.dart';
-import 'package:genius_park/screens/resources.dart';
-import 'package:genius_park/utils/navigatoin.dart';
-import 'package:genius_park/widgets/bottom_nav.dart';
+
 import 'package:genius_park/widgets/categories.dart';
 import 'package:genius_park/widgets/drawer.dart';
-import 'package:genius_park/widgets/listile.dart';
 import 'package:genius_park/widgets/spoton_tab.dart';
 
 import 'package:genius_park/widgets/top_podcast.dart';
@@ -140,7 +135,6 @@ class _SpotOnPageState extends State<SpotOnPage> {
           ]),
         ),
       ),
-      bottomNavigationBar: BottomNavBar(),
     );
   }
 }

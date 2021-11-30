@@ -90,14 +90,14 @@ class _CategoriesState extends State<Categories> {
                       ),
                     ),
                     const SizedBox(height: 5),
-                    Text(
-                      categoriesList[i].name,
-                      style: GoogleFonts.nunito(textStyle: const TextStyle(
-                        color: Colors.black87,
-                        fontWeight: FontWeight.normal,
-                        fontSize: 14,
-                      ),)
-                    )
+                    Text(categoriesList[i].name,
+                        style: GoogleFonts.nunito(
+                          textStyle: const TextStyle(
+                            color: Colors.black87,
+                            fontWeight: FontWeight.normal,
+                            fontSize: 14,
+                          ),
+                        ))
                   ]),
                 ),
               );

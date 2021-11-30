@@ -3,7 +3,6 @@ import 'package:genius_park/screens/affirmation_page.dart';
 import 'package:genius_park/screens/qoute_page.dart';
 import 'package:genius_park/screens/resources.dart';
 import 'package:genius_park/screens/spot_me.dart';
-import 'package:genius_park/utils/complex.dart';
 import 'package:genius_park/utils/navigatoin.dart';
 import 'package:genius_park/widgets/listile.dart';
 
@@ -17,7 +16,7 @@ class DrawerWidget extends StatelessWidget {
     return Drawer(
       child: ListView(
         children: <Widget>[
-          SizedBox(
+          const SizedBox(
             height: 80,
           ),
           ListTiling('images/homeicon.png', 'Home'),

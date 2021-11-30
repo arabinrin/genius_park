@@ -1,20 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:genius_park/screens/Podcast.dart';
-import 'package:genius_park/screens/affirmation_page.dart';
-import 'package:genius_park/utils/complex.dart';
-import 'package:genius_park/utils/navigatoin.dart';
-import 'package:genius_park/widgets/bottom_nav.dart';
-import 'package:genius_park/widgets/categories.dart';
-import 'package:genius_park/widgets/daily_qoute.dart';
-import 'package:genius_park/widgets/drawer.dart';
-import 'package:genius_park/widgets/group_button.dart';
-import 'package:genius_park/widgets/listile.dart';
-import 'package:genius_park/widgets/nav_bar.dart';
-import 'package:genius_park/widgets/podcast.dart';
-import 'package:genius_park/widgets/qoute.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '';
+import 'package:genius_park/utils/complex.dart';
+import 'package:genius_park/widgets/categories.dart';
+import 'package:genius_park/widgets/drawer.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SpotMePage extends StatefulWidget {
   const SpotMePage({Key? key}) : super(key: key);
@@ -115,8 +105,8 @@ class _SpotMePageState extends State<SpotMePage> {
                 Text(
                   'Daily Qoutes',
                   style: GoogleFonts.merriweather(
-                    textStyle: const TextStyle(
-                      fontSize: 20,
+                    textStyle: TextStyle(
+                      fontSize: 20.r,
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
                     ),
@@ -124,9 +114,9 @@ class _SpotMePageState extends State<SpotMePage> {
                 ),
                 Text(
                   'See all',
-                  style: GoogleFonts.poppins(
-                    textStyle: const TextStyle(
-                      fontSize: 14,
+                  style: GoogleFonts.merriweather(
+                    textStyle: TextStyle(
+                      fontSize: 14.r,
                       fontWeight: FontWeight.w400,
                       color: Colors.black54,
                     ),
@@ -136,57 +126,56 @@ class _SpotMePageState extends State<SpotMePage> {
             ),
             Complex(),
             Container(
-          height: 100,
-          width: 200,
-          alignment: Alignment.center,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                height: 50,
-                width: 50,
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(.2),
-                      offset: Offset(2, 2),
-                      blurRadius: 5,
+              height: 100,
+              width: 200,
+              alignment: Alignment.center,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    height: 50,
+                    width: 50,
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(.2),
+                          offset: Offset(2, 2),
+                          blurRadius: 5,
+                        ),
+                      ],
+                      shape: BoxShape.circle,
+                      color: Colors.grey.withOpacity(.4),
                     ),
-                  ],
-                  shape: BoxShape.circle,
-                  color: Colors.grey.withOpacity(.4),
-                ),
-                child: Icon(Icons.add),
-              ),
-              const SizedBox(
-                width: 40,
-              ),
-              Container(
-                height: 50,
-                width: 50,
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(.2),
-                      offset: Offset(2, 2),
-                      blurRadius: 5,
+                    child: Icon(Icons.add),
+                  ),
+                  const SizedBox(
+                    width: 40,
+                  ),
+                  Container(
+                    height: 50,
+                    width: 50,
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(.2),
+                          offset: Offset(2, 2),
+                          blurRadius: 5,
+                        ),
+                      ],
+                      shape: BoxShape.circle,
+                      color: Colors.red.withOpacity(.3),
                     ),
-                  ],
-                  shape: BoxShape.circle,
-                  color: Colors.red.withOpacity(.3),
-                ),
-                child: Icon(
-                  Icons.favorite,
-                  color: Colors.red,
-                ),
+                    child: Icon(
+                      Icons.favorite,
+                      color: Colors.red,
+                    ),
+                  ),
+                ],
               ),
-            ],
-          ),
-        ),
+            ),
           ]),
         ),
       ),
-      bottomNavigationBar: BottomNavBar(),
     );
   }
 }

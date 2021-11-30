@@ -1,7 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:genius_park/screens/sign_in.dart';
-import 'package:genius_park/utils/colors.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -29,7 +30,7 @@ class _LandingState extends State<Landing> {
           Positioned(
             top: 100,
             child: Container(
-              height: 560,
+              height: 560.r,
               width: width,
               child: Column(
                 children: [
@@ -37,7 +38,7 @@ class _LandingState extends State<Landing> {
                     itemCount: imagesList.length,
                     options: CarouselOptions(
                       enableInfiniteScroll: false,
-                      height: 390,
+                      height: 390.r,
                       reverse: true,
                       viewportFraction: .7,
                       enlargeCenterPage: true,
@@ -67,12 +68,11 @@ class _LandingState extends State<Landing> {
                   AnimatedSmoothIndicator(
                     activeIndex: scrollIndex,
                     count: imagesList.length,
-                    effect: const ExpandingDotsEffect(
-                      dotColor: ColorConstants.WINE,
-                      activeDotColor: Colors.white,
-                      dotHeight: 10,
-                      
-                    ),
+                    effect: ExpandingDotsEffect(
+                        dotColor: Colors.grey.withOpacity(0.7),
+                        activeDotColor: Colors.white,
+                        dotHeight: 7.r,
+                        dotWidth: 10.r),
                   ),
                   const SizedBox(
                     height: 40,
@@ -85,19 +85,15 @@ class _LandingState extends State<Landing> {
                         children: <Widget>[
                           Text('Genius',
                               style: GoogleFonts.merriweather(
-                                textStyle: TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 25,
-                                  color: Colors.white,
-                                ),
+                                fontWeight: FontWeight.w400,
+                                fontSize: 25.r,
+                                color: Colors.white,
                               )),
                           Text('PARK',
                               style: GoogleFonts.merriweather(
-                                textStyle: const TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 25,
-                                  color: Colors.white,
-                                ),
+                                fontWeight: FontWeight.w600,
+                                fontSize: 25.r,
+                                color: Colors.white,
                               )),
                         ],
                       ),
@@ -107,11 +103,8 @@ class _LandingState extends State<Landing> {
                         child: Text(
                           'Meditation is an approach to training the mind, similar to the way that fitness is an approach to training the body.',
                           style: GoogleFonts.merriweather(
-                            textStyle: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              letterSpacing: 1.5,
-                            ),
+                            color: Colors.white,
+                            fontSize: 18.r,
                           ),
                           textAlign: TextAlign.center,
                           overflow: TextOverflow.ellipsis,
@@ -145,7 +138,7 @@ class _LandingState extends State<Landing> {
                     child: Center(
                         child: Text('Get Started',
                             style: GoogleFonts.merriweather(
-                              textStyle:const TextStyle(
+                              textStyle: const TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w700,
                               ),

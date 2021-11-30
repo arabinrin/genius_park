@@ -1,16 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:genius_park/screens/affirmation_page.dart';
-import 'package:genius_park/screens/qoute_page.dart';
-import 'package:genius_park/screens/resources.dart';
-import 'package:genius_park/utils/navigatoin.dart';
-import 'package:genius_park/widgets/bottom_nav.dart';
 import 'package:genius_park/widgets/categories.dart';
 import 'package:genius_park/widgets/drawer.dart';
-import 'package:genius_park/widgets/group_button.dart';
-import 'package:genius_park/widgets/listile.dart';
-import 'package:genius_park/widgets/nav_bar.dart';
 import 'package:genius_park/widgets/podcast.dart';
-import 'package:genius_park/widgets/qoute.dart';
 import 'package:genius_park/widgets/top_podcast.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -99,7 +90,7 @@ class _PodcastPageState extends State<PodcastPage> {
                   ),
                 ],
               ),
-              const SizedBox(
+              SizedBox(
                 height: 5,
               ),
               Categories(),
@@ -165,7 +156,6 @@ class _PodcastPageState extends State<PodcastPage> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavBar(),
     );
   }
 }

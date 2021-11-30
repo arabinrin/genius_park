@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:genius_park/screens/sign_in.dart';
-import 'package:genius_park/utils/colors.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:genius_park/utils/constant.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -23,7 +23,7 @@ class _SpotMEState extends State<SpotME> {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Colors.red,
+      backgroundColor: kprimarycolor,
       body: Stack(
         children: <Widget>[
           Positioned(
@@ -47,14 +47,14 @@ class _SpotMEState extends State<SpotME> {
                   const SizedBox(
                     width: 100,
                   ),
-                   Text(
-                    'SPOT-ME',
-                    style: GoogleFonts.merriweather( textStyle: const TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 25,
-                      color: Colors.white,
-                    ),)
-                  ),
+                  Text('SPOT-ME',
+                      style: GoogleFonts.merriweather(
+                        textStyle: const TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 25,
+                          color: Colors.white,
+                        ),
+                      )),
                 ],
               ),
             ),
@@ -62,7 +62,7 @@ class _SpotMEState extends State<SpotME> {
           Positioned(
             top: 100,
             child: Container(
-              height: 580,
+              height: 580.r,
               width: width,
               child: Column(
                 children: [
@@ -70,7 +70,7 @@ class _SpotMEState extends State<SpotME> {
                     itemCount: imagesList.length,
                     options: CarouselOptions(
                       enableInfiniteScroll: false,
-                      height: 390,
+                      height: 390.r,
                       reverse: true,
                       viewportFraction: .7,
                       enlargeCenterPage: true,
@@ -88,7 +88,6 @@ class _SpotMEState extends State<SpotME> {
                             image: AssetImage(centerImage),
                             fit: BoxFit.fill,
                           ),
-                          color: Colors.red,
                         ),
                         // child: Image.asset(
                         //   centerImage,
@@ -103,11 +102,11 @@ class _SpotMEState extends State<SpotME> {
                   AnimatedSmoothIndicator(
                     activeIndex: scrollIndex,
                     count: imagesList.length,
-                    effect: const ExpandingDotsEffect(
-                      dotColor: ColorConstants.WINE,
-                      activeDotColor: Colors.white,
-                      dotHeight: 10,
-                    ),
+                    effect: ExpandingDotsEffect(
+                        dotColor: Colors.grey.withOpacity(0.7),
+                        activeDotColor: Colors.white,
+                        dotHeight: 7.r,
+                        dotWidth: 10.r),
                   ),
                   const SizedBox(
                     height: 30,
@@ -117,28 +116,26 @@ class _SpotMEState extends State<SpotME> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
-                        children:  <Widget>[
-                          Text(
-                            'SPOT-ME',
-                            style:GoogleFonts.merriweather(textStyle: const TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 25,
-                              color: Colors.white,
-                            ),)
-                          ),
+                        children: <Widget>[
+                          Text('SPOT-ME',
+                              style: GoogleFonts.merriweather(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 25.r,
+                                color: Colors.white,
+                              )),
                         ],
                       ),
                       const SizedBox(height: 10),
-                       Padding(
+                      Padding(
                         padding: EdgeInsets.symmetric(horizontal: 50),
                         child: Text(
                           'SPOT Me is an approach to training the mind, similar to the way that fitness is an approach to training the body. ',
-                          style:GoogleFonts.merriweather(textStyle:const TextStyle(
+                          style: GoogleFonts.merriweather(
                             color: Colors.white,
-                            fontSize: 18,
+                            fontSize: 12.r,
                             wordSpacing: 2,
                             letterSpacing: 1.5,
-                          ),),
+                          ),
                           textAlign: TextAlign.center,
                           overflow: TextOverflow.ellipsis,
                           maxLines: 5,
@@ -165,15 +162,15 @@ class _SpotMEState extends State<SpotME> {
                       borderRadius: BorderRadius.circular(50),
                       color: Colors.black,
                     ),
-                    child:  Center(
-                        child: Text(
-                      'Get Started',
-                      style: GoogleFonts.merriweather(textStyle: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.white,
-                      ),)
-                    )),
+                    child: Center(
+                        child: Text('Get Started',
+                            style: GoogleFonts.merriweather(
+                              textStyle: const TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w700,
+                                color: Colors.white,
+                              ),
+                            ))),
                   ),
                 ),
               ))
