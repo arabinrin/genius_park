@@ -3,7 +3,7 @@ import 'package:genius_park/screens/affirmation_page.dart';
 import 'package:genius_park/screens/qoute_page.dart';
 import 'package:genius_park/screens/resources.dart';
 import 'package:genius_park/screens/spot_me.dart';
-import 'package:genius_park/utils/navigatoin.dart';
+import 'package:genius_park/utils/navigator.dart';
 import 'package:genius_park/widgets/listile.dart';
 
 class DrawerWidget extends StatelessWidget {
@@ -24,7 +24,7 @@ class DrawerWidget extends StatelessWidget {
           ListTiling('images/podcasticon.png', 'Podcast'),
           GestureDetector(
               onTap: () {
-                changeScreen(context, SpotMePage());
+                changeScreen(context, QoutePage());
               },
               child: ListTiling('images/qouteicon.png', 'Qoutes')),
           GestureDetector(

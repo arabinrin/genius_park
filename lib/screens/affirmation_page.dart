@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:genius_park/screens/qoute_page.dart';
 import 'package:genius_park/screens/resources.dart';
-import 'package:genius_park/utils/navigatoin.dart';
+import 'package:genius_park/utils/navigator.dart';
 import 'package:genius_park/widgets/affirmation.dart';
-import 'package:genius_park/widgets/categories.dart';
 import 'package:genius_park/widgets/listile.dart';
 
 class AffirmPage extends StatefulWidget {
@@ -45,7 +44,7 @@ class _AffirmPageState extends State<AffirmPage> {
 
             GestureDetector(
                 onTap: () {
-                  changeScreen(context, SpotMePage());
+                  changeScreen(context, QoutePage());
                 },
                 child: ListTiling('images/qouteicon.png', 'Qoutes')),
 
@@ -149,7 +148,6 @@ class _AffirmPageState extends State<AffirmPage> {
               const SizedBox(
                 height: 5,
               ),
-              Categories(),
               const SizedBox(
                 height: 15,
               ),

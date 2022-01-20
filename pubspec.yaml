@@ -39,15 +39,25 @@ dependencies:
   transparent_image:
   flutter_spinkit:
   flutter_typeahead: 
-  group_button: ^3.3.1
+  group_button: ^3.3.1  
   flutter_staggered_grid_view: 
   provider: ^6.0.1
-  
+  flutter_svg: 
+  # cloud_firestore: 
+  # firebase_core : 
+  # local_auth:
+  uuid:
+  animated_splash_screen: ^1.1.0
+  flutter_custom_clippers:
+
+  # firebase_auth: ^3.3.0
   flutter_screenutil: ^5.0.1
   hex_color_me:
   google_fonts:
   form_field_validator:
-  
+  shared_preferences:
+  introduction_screen: ^2.1.0
+
   
 
 dev_dependencies:

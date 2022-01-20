@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:genius_park/widgets/categories.dart';
 import 'package:genius_park/widgets/drawer.dart';
 import 'package:genius_park/widgets/spoton_tab.dart';
 
@@ -100,7 +99,6 @@ class _SpotOnPageState extends State<SpotOnPage> {
             const SizedBox(
               height: 5,
             ),
-            Categories(),
             const SizedBox(
               height: 15,
             ),

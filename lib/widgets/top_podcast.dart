@@ -1,141 +1,119 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:genius_park/models/podcast_model.dart';
 import 'package:genius_park/models/top_podcast.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TopPodcast extends StatelessWidget {
-  List<TopPodcastModel> topPodcast = [
-    TopPodcastModel(true,
-        image: 'images/qoute2.png',
-        title: 'Stay Right and Stay true',
-        author: 'StephREDD',
-        time: 15),
-    TopPodcastModel(true,
-        image: 'images/qoute3.png',
-        title: 'Stay Right and Stay true',
-        author: 'StephREDD',
-        time: 15),
-    TopPodcastModel(true,
-        image: 'images/qoute4.png',
-        title: 'Stay Right and Stay true',
-        author: 'StephREDD',
-        time: 15),
-    TopPodcastModel(true,
-        image: 'images/qoute5.png',
-        title: 'Stay Right and Stay true',
-        author: 'StephREDD',
-        time: 15),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
       child: Container(
-        height: 400,
-        child: StaggeredGridView.countBuilder(
+        padding: EdgeInsets.symmetric(horizontal: 10),
+        height: 410,
+        child: GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            childAspectRatio: 3 / 2,
             crossAxisCount: 2,
             crossAxisSpacing: 10,
             mainAxisSpacing: 12,
-            itemCount: topPodcast.length,
-            itemBuilder: (context, index) {
-              return Container(
-                decoration: BoxDecoration(
-                  color: Colors.transparent,
-                  borderRadius: const BorderRadius.all(
-                    Radius.circular(15),
-                  ),
-                  image: DecorationImage(
-                    image: AssetImage(
-                      topPodcast[index].image,
-                    ),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                child: Stack(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        gradient: LinearGradient(
-                          begin: Alignment.bottomCenter,
-                          end: Alignment.topCenter,
-                          colors: [
-                            Colors.black.withOpacity(.5),
-                            Colors.black.withOpacity(.4),
-                            Colors.black.withOpacity(.2),
-                            Colors.black.withOpacity(.1),
-                            Colors.black.withOpacity(.1),
-                          ],
+          ),
+          itemCount: podcasts.length,
+          itemBuilder: (context, i) {
+            return Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    width: 190,
+                    height: 125,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(podcasts[i].image),
+                          fit: BoxFit.cover,
                         ),
-                      ),
-                    ),
-                    Positioned(
-                        top: 10,
-                        left: 10,
-                        child: Row(
-                          children: [
-                            Image.asset(
-                              'images/time - icon.png',
-                              width: 20,
-                              height: 20,
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.black.withOpacity(.3)),
+                    // child: Image.asset(
+                    //   podcasts[i].image,
+                    // ),
+                  ),
+                  Positioned(
+                    top: 10,
+                    left: 20,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Center(
+                          child: IconButton(
+                            onPressed: () {},
+                            icon: const ImageIcon(
+                              AssetImage('images/playnew.png'),
+                              color: Colors.white,
+                              size: 60,
                             ),
-                            Text(
-                              ' ${topPodcast[index].time} min',
-                              style: const TextStyle(
+                          ),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          "Episode ${podcasts[i].episode}",
+                          style: GoogleFonts.raleway(
+                            textStyle: const TextStyle(
+                              fontSize: 18,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Container(
+                          width: 130,
+                          child: Text(
+                            podcasts[i].title,
+                            style: GoogleFonts.raleway(
+                              textStyle: const TextStyle(
+                                fontSize: 18,
                                 color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 10,
+                                fontWeight: FontWeight.w400,
                               ),
                             ),
-                          ],
-                        )),
-                    Container(
-                      alignment: Alignment.center,
-                      child: Image.asset(
-                        'images/play.png',
-                        width: 25,
-                        height: 25,
-                      ),
-                    ),
-                    Positioned(
-                      bottom: 20,
-                      left: 15,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            topPodcast[index].title,
-                            style: GoogleFonts.poppins(
-                              textStyle: const TextStyle(
-                                  fontSize: 14,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w500),
-                            ),
-                            textAlign: TextAlign.left,
                             overflow: TextOverflow.ellipsis,
-                            maxLines: 3,
+                            maxLines: 1,
                           ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          Text(
-                            topPodcast[index].author,
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 10,
+                        ),
+                        SizedBox(
+                          height: 8,
+                        ),
+                        Container(
+                          width: 100,
+                          child: Text(
+                            podcasts[i].author,
+                            style: GoogleFonts.raleway(
+                              textStyle: const TextStyle(
+                                fontSize: 12,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w700,
+                              ),
                             ),
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 1,
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-              );
-            },
-            staggeredTileBuilder: (index) {
-              return StaggeredTile.count(1, index.isEven ? 1.1 : 1.3);
-            }),
+                  ),
+                ],
+              ),
+            );
+          },
+        ),
       ),
     );
   }

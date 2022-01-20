@@ -1,4 +1,3 @@
-// @dart=2.9
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:genius_park/models/spoken_word.dart';
@@ -242,13 +241,14 @@ class _SpotTabState extends State<SpotTab> {
 
 class CircleTabIndicator extends Decoration {
   final BoxPainter _painter;
-  // Color color = Colors.red;
-  // double radius = 3;
-  CircleTabIndicator({Color color, double radius})
+  Color color = Colors.red;
+  Function? change;
+  double radius = 3;
+  CircleTabIndicator({Color color = Colors.red, double radius = 3})
       : _painter = _CirclePainter(color, radius);
 
   @override
-  BoxPainter createBoxPainter([onChanged]) => _painter;
+  BoxPainter createBoxPainter([VoidCallback? onChanged]) => _painter;
 }
 
 class _CirclePainter extends BoxPainter {
@@ -263,7 +263,7 @@ class _CirclePainter extends BoxPainter {
   @override
   void paint(Canvas canvas, Offset offset, ImageConfiguration cfg) {
     final Offset circleOffset =
-        offset + Offset(cfg.size.width / 2, cfg.size.height - radius - 5);
+        offset + Offset(cfg.size!.width / 2, cfg.size!.height - radius - 5);
     canvas.drawCircle(circleOffset, radius, _paint);
   }
 }
